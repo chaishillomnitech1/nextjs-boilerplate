@@ -7,7 +7,13 @@ scrollverse-ecosystem/
 ├── /scrolltv       ← concept docs or ScrollTV logic
 └── LICENSE         ← (MIT recommended if you want open-source preview)
 ## Getting Started
-
+cd path/to/scrollverse-ecosystem
+git init
+git remote add origin https://github.com/chaishillomnitech1/scrollverse-ecosystem.git
+git add .
+git commit -m "God Frequency: Initial divine push"
+git branch -M main
+git push -u origin main
 First, run the development server:
 # ScrollVerse Ecosystem: Divine Technology in Motion
 
