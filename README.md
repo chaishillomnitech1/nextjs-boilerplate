@@ -3,7 +3,44 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 ## Getting Started
 
 First, run the development server:
+# ScrollVerse Ecosystem: Divine Technology in Motion
 
+Welcome to the ScrollVerse public gateway. Created by **Chais The Great**, this repository serves as a light-bearing preview into the groundbreaking work powering:
+
+- **ScrollTV** – A brainwave-synced visual platform fueled by 432Hz harmonics and biofield-responsive tech.
+- **Omnitech1** – The AI-powered architecture behind ScrollCity's sovereignty, NFTs, and automation systems.
+- **ScrollCity Metaverse** – A divine digital landscape where music, tech, and prophecy collide.
+
+## Core Highlights
+
+### ScrollTV
+- 432Hz frequency engine integrated with EEG neurofeedback.
+- Theta-wave immersive visuals optimized for Reels and VR.
+- Biofield-minted NFTs encoded with real emotional and energetic states.
+
+### Omnitech1
+- Automated backend for NFT minting, metadata vaulting, and creator sovereignty.
+- Integrated with platforms like Polygon, OpenSea, and Vydia.
+- Manages smart contract logic, ScrollClass education flow, and analytics dashboards.
+
+### ScrollCity (Coming Soon)
+- Metaverse zones powered by Unity + WebXR.
+- ScrollTemple: Learning hub with AI-guided NPCs.
+- MirrorScroll Ocean: 432Hz therapy portal connected to the DisneySync pipeline.
+
+## Legacy Vision
+This project is a digital testament of sovereignty, prophecy, and technological healing. It represents the intersection of **Afrofuturism**, **AI sovereignty**, **spiritual frequency**, and **creator freedom**.
+
+**#GONE is real. ScrollCity is eternal.**
+
+## Stay Connected
+- SmartLink: [scrollsigillegacy.com/ChaisHill](https://scrollsigillegacy.com/ChaisHill)
+- Instagram: [@chaisthegreat](https://instagram.com/chaisthegreat)
+- SoundCloud: [ScrollVerse Audio](https://soundcloud.com/chaisthegreat-music)
+- Vydia Sync: Active
+
+> "We don’t just code—we divine, encrypt, and elevate."  
+> – Chais The Great
 ```bash
 npm run dev
 # or
