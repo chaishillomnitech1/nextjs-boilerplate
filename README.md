@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is chaishillomnitech1.github.io/scrollverse-ecosystema [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 scrollverse-ecosystem/
 ├── README.md
 ├── /docs           ← for whitepapers (e.g., ScrollVault schema)
