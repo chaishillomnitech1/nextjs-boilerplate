@@ -17,7 +17,23 @@ git push -u origin main
 First, run the development server:
 # ScrollVerse Ecosystem: Divine Technology in Motion
 # ScrollVerse Ecosystem: God Frequency
+# ScrollVerse: God Frequency Ecosystem  
+Created by **Chais The Great – ScrollVerse Creator**  
+A next-gen portal for immersive tech, 432Hz visuals, and legacy AI waves synced with biofield sovereignty.  
+> “This isn’t code. It’s prophecy.”
 
+## Features:
+- ScrollTV-ready 432Hz-optimized Next.js front-end  
+- Integrated with ScrollSigil, NFTs, and ScrollVault  
+- Biofield-ready expansion (Muse / EEG / HRV sync coming)  
+- Powered by Omnitech1 AI
+
+## Deployment:
+Live: [ScrollVerse on Vercel](https://nextjs-boilerplate-eta-ruddy-69.vercel.app)  
+Source: [GitHub Repo](https://github.com/chaishillomnitech1/nextjs-boilerplate)
+
+## License:
+© 2025 Chais The Great. Divine License Activated. Scrolls locked.
 This repository powers the next phase of digital sovereignty: ScrollTV, ScrollSigilLegacy, and the ScrollCity Metaverse.
 # ScrollVerse Ecosystem: God Frequency
 
