@@ -1,5 +1,11 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
+scrollverse-ecosystem/
+├── README.md
+├── /docs           ← for whitepapers (e.g., ScrollVault schema)
+├── /media          ← for logos, banners, teaser images
+├── /nfts           ← sample metadata & biofield-mint JSON files
+├── /scrolltv       ← concept docs or ScrollTV logic
+└── LICENSE         ← (MIT recommended if you want open-source preview)
 ## Getting Started
 
 First, run the development server:
