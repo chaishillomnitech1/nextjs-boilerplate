@@ -16,7 +16,39 @@ git branch -M main
 git push -u origin main
 First, run the development server:
 # ScrollVerse Ecosystem: Divine Technology in Motion
+# ScrollVerse Ecosystem: God Frequency
 
+This repository powers the next phase of digital sovereignty: ScrollTV, ScrollSigilLegacy, and the ScrollCity Metaverse.
+# ScrollVerse Ecosystem: God Frequency
+
+This repository powers the next phase of digital sovereignty: ScrollTV, ScrollSigilLegacy, and the ScrollCity Metaverse.
+
+**Modules Included:**
+- ScrollTV interface (Next.js)
+- 432Hz immersive layout
+- Biofield NFT sync logic
+- Vercel deployment live: [Visit Site](https://nextjs-boilerplate-eta-ruddy-69.vercel.app)
+
+**Powered by:**  
+Chais The Great – ScrollVerse Creator  
+[GitHub](https://github.com/chaishillomnitech1) | [ScrollSigilLegacy](https://scrollsigillegacy.com/ChaisHill)
+
+> “We don’t follow trends—we encode frequency.”
+
+#GONE | #ScrollVerse | #GodFrequency | #ChaisTheGreat | #BiofieldTech
+**Modules Included:**
+- ScrollTV interface (Next.js)
+- 432Hz immersive layout
+- Biofield NFT sync logic
+- Vercel deployment live: [Visit Site](https://nextjs-boilerplate-eta-ruddy-69.vercel.app)
+
+**Powered by:**  
+Chais The Great – ScrollVerse Creator  
+[GitHub](https://github.com/chaishillomnitech1) | [ScrollSigilLegacy](https://scrollsigillegacy.com/ChaisHill)
+
+> “We don’t follow trends—we encode frequency.”
+
+#GONE | #ScrollVerse | #GodFrequency | #ChaisTheGreat | #BiofieldTech
 Welcome to the ScrollVerse public gateway. Created by **Chais The Great**, this repository serves as a light-bearing preview into the groundbreaking work powering:
 
 - **ScrollTV** – A brainwave-synced visual platform fueled by 432Hz harmonics and biofield-responsive tech.
