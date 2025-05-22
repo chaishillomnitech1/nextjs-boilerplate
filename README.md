@@ -109,7 +109,17 @@ Chais The Great – ScrollVerse Creator
 feat: Add ScrollMusicDAO royalty contract with ZKP-ready logic and sigil holder payout structure
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
-
+{
+  "track_title": "Ascension Harmonics",
+  "frequencies": ["528Hz", "963Hz"],
+  "zk_verified_streams": 19230,
+  "royalty_splits": {
+    "artist": "60%",
+    "DAO": "25%",
+    "SigilHolders": "15%"
+  },
+  "metadata_hash": "bafkreigh2akiscrolltvzkmeta"
+}
 contract ScrollMusicRoyalty {
     address public owner;
     address public artist;
