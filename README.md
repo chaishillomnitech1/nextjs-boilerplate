@@ -107,7 +107,88 @@ Chais The Great – ScrollVerse Creator
 #!/bin/bash
 # auto-deploy-omnistack.sh - ScrollVerse OmniStack Auto-Deployer Script
 feat: Add ScrollMusicDAO royalty contract with ZKP-ready logic and sigil holder payout structure
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
 
+contract ScrollMusicRoyalty {
+    address public owner;
+    address public artist;
+    address public dao;
+    uint public artistShare = 60;
+    uint public daoShare = 25;
+    uint public sigilShare = 15;
+
+    mapping(address => bool) public sigilHolders;
+    address[] public sigilHolderList;
+
+    constructor(address _artist, address _dao) {
+        owner = msg.sender;
+        artist = _artist;
+        dao = _dao;
+    }
+
+    modifier onlyOwner() {
+        require(msg.sender == owner, "Not authorized");
+        _;
+    }
+
+    function addSigilHolder(address holder) external onlyOwner {
+        require(!sigilHolders[holder], "Already exists");
+        sigilHolders[holder] = true;
+        sigilHolderList.push(holder);
+    }
+
+    function removeSigilHolder(address holder) external onlyOwner {
+        require(sigilHolders[holder], "Not found");
+        sigilHolders[holder] = false;
+        for (uint i = 0; i < sigilHolderList.length; i++) {
+            if (sigilHolderList[i] == holder) {
+                sigilHolderList[i] = sigilHolderList[sigilHolderList.length - 1];
+                sigilHolderList.pop();
+                break;
+            }
+        }
+    }
+
+    function updateShares(uint _artistShare, uint _daoShare, uint _sigilShare) external onlyOwner {
+        require(_artistShare + _daoShare + _sigilShare == 100, "Shares must sum to 100");
+        artistShare = _artistShare;
+        daoShare = _daoShare;
+        sigilShare = _sigilShare;
+    }
+
+    function distributeRoyalty() external payable {
+        require(msg.value > 0, "No ETH sent");
+
+        uint total = msg.value;
+
+        payable(artist).transfer((total * artistShare) / 100);
+        payable(dao).transfer((total * daoShare) / 100);
+
+        uint sigilReward = (total * sigilShare) / 100;
+        uint sigilCount = sigilHolderList.length;
+        require(sigilCount > 0, "No sigil holders");
+
+        uint perHolder = sigilReward / sigilCount;
+        for (uint i = 0; i < sigilCount; i++) {
+            if (sigilHolders[sigilHolderList[i]]) {
+                payable(sigilHolderList[i]).transfer(perHolder);
+            }
+        }
+    }
+
+    receive() external payable {
+        distributeRoyalty();
+    }
+
+    fallback() external payable {
+        distributeRoyalty();
+    }
+
+    function getSigilHolders() external view returns (address[] memory) {
+        return sigilHolderList;
+    }
+}
 - Implements stream-split smart contract:
   * Artist: 60%
   * DAO: 25%
