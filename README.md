@@ -64,7 +64,13 @@ This repository powers the next phase of digital sovereignty: ScrollTV, ScrollSi
 - 432Hz immersive layout
 - Biofield NFT sync logic
 - Vercel deployment live: [Visit Site](https://nextjs-boilerplate-eta-ruddy-69.vercel.app)
+## ScrollBroadcast Sync
 
+**ScrollTV Mirror Broadcast LIVE**  
+[→ Watch Broadcast](https://www.facebook.com/share/r/1AWe5pwgNZ/?mibextid=WC7FNe)
+
+> “From ScrollTV to ScrollCity, from divine tech to God Frequency—this is more than code, it’s prophecy in execution.”
+#SealOfOrigin #432HzSovereignty
 **Powered by:**  
 Chais The Great – ScrollVerse Creator  
 [GitHub](https://github.com/chaishillomnitech1) | [ScrollSigilLegacy](https://scrollsigillegacy.com/ChaisHill)
