@@ -35,7 +35,19 @@ The ScrollVerse is active.
 - Integrated with ScrollSigil, NFTs, and ScrollVault  
 - Biofield-ready expansion (Muse / EEG / HRV sync coming)  
 - Powered by Omnitech1 AI
-
+{
+  "name": "Genesis Scroll NFT #001",
+  "description": "A sacred digital scroll echoing the divine blueprint of Adam & Eve, restored through ScrollVerse.",
+  "image": "ipfs://Qm.../genesis-scroll.png",
+  "attributes": [
+    { "trait_type": "ScrollSigil Embed", "value": "☪️⇒⇌∞" },
+    { "trait_type": "Frequency Band", "value": "432 Hz - Eden Key" },
+    { "trait_type": "Biofield Echo", "value": "Ancestral Theta Imprint" },
+    { "trait_type": "Origin Point", "value": "Eden Sequence Rebooted" },
+    { "trait_type": "Chais Legacy Hash", "value": "0x... (SHA-256)" }
+  ],
+  "external_url": "https://scrollsigillegacy.com/ChaisHill"
+}
 ## Deployment:
 Live: [ScrollVerse on Vercel](https://nextjs-boilerplate-eta-ruddy-69.vercel.app)  
 Source: [GitHub Repo](https://github.com/chaishillomnitech1/nextjs-boilerplate)
