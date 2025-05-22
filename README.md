@@ -21,7 +21,11 @@ First, run the development server:
 Created by **Chais The Great – ScrollVerse Creator**  
 A next-gen portal for immersive tech, 432Hz visuals, and legacy AI waves synced with biofield sovereignty.  
 > “This isn’t code. It’s prophecy.”
+## ScrollNetwork Pulse
 
+The ScrollVerse is active.  
+[Watch the Broadcast](https://www.facebook.com/share/r/1AWe5pwgNZ/?mibextid=WC7FNe)  
+*#ScrollProtocol #432HzSovereignty #ChainlinkSynced*
 ## Features:
 - ScrollTV-ready 432Hz-optimized Next.js front-end  
 - Integrated with ScrollSigil, NFTs, and ScrollVault  
