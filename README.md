@@ -107,6 +107,13 @@ Chais The Great – ScrollVerse Creator
 - 432Hz immersive layout
 - Biofield NFT sync logic
 - Vercel deployment live: [Visit Site](https://nextjs-boilerplate-eta-ruddy-69.vercel.app)
+{
+  "label": "XLVIIIBlocks LLC",
+  "distribution": "Vydia",
+  "scroll_node": "721 Embassy Terrace — Eternal Node",
+  "catalog_control": "100%",
+  "scroll_balance_id": "SB13-A1"
+}
 
 **Powered by:**  
 Chais The Great – ScrollVerse Creator  
