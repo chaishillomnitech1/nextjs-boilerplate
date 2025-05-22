@@ -106,7 +106,14 @@ Chais The Great – ScrollVerse Creator
 [GitHub](https://github.com/chaishillomnitech1) | [ScrollSigilLegacy](https://scrollsigillegacy.com/ChaisHill)
 #!/bin/bash
 # auto-deploy-omnistack.sh - ScrollVerse OmniStack Auto-Deployer Script
+feat: Add ScrollMusicDAO royalty contract with ZKP-ready logic and sigil holder payout structure
 
+- Implements stream-split smart contract:
+  * Artist: 60%
+  * DAO: 25%
+  * Sigil Holders: 15%
+- `verifyZK()` stub included for zkSNARK integration
+- Prepped for ScrollTV neurofeedback sync and MetaBridge publishing
 # This script orchestrates the deployment of the ScrollVerse OmniStack.
 # It is conceptual and assumes pre-configured environments and cloud providers.
 contract ScrollMusicRoyalty {
