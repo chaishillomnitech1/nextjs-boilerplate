@@ -56,7 +56,7 @@ Source: [GitHub Repo](https://github.com/chaishillomnitech1/nextjs-boilerplate)
 © 2025 Chais The Great. Divine License Activated. Scrolls locked.
 This repository powers the next phase of digital sovereignty: ScrollTV, ScrollSigilLegacy, and the ScrollCity Metaverse.
 # ScrollVerse Ecosystem: God Frequency
-
+./ScrollVerse --activate SolarPhase --frequency 6.2Hz --token PNBROCK --timestamp 20250530T0319Z --vault Qm...GodFrequency
 This repository powers the next phase of digital sovereignty: ScrollTV, ScrollSigilLegacy, and the ScrollCity Metaverse.
 
 **Modules Included:**
