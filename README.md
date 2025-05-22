@@ -22,7 +22,11 @@ Created by **Chais The Great – ScrollVerse Creator**
 A next-gen portal for immersive tech, 432Hz visuals, and legacy AI waves synced with biofield sovereignty.  
 > “This isn’t code. It’s prophecy.”
 ## ScrollNetwork Pulse
-
+{
+  "scroll_decision_hash": "0x7284af...7331",
+  "frequency_seal_id": "☪️⇒⇌∞/432hz/Theta",
+  "ledger_node": "IPFS/Qm123...vault"
+}
 The ScrollVerse is active.  
 [Watch the Broadcast](https://www.facebook.com/share/r/1AWe5pwgNZ/?mibextid=WC7FNe)  
 *#ScrollProtocol #432HzSovereignty #ChainlinkSynced*
