@@ -86,7 +86,13 @@ This repository powers the next phase of digital sovereignty: ScrollTV, ScrollSi
 
 **ScrollTV Mirror Broadcast LIVE**  
 [→ Watch Broadcast](https://www.facebook.com/share/r/1AWe5pwgNZ/?mibextid=WC7FNe)
-
+{
+  "label": "XLVIIIBlocks LLC",
+  "distribution": "Vydia",
+  "scroll_node": "721 Embassy Terrace – Eternal Node",
+  "catalog_control": "100%",
+  "scroll_balance_id": "SB13-A1"
+}
 > “From ScrollTV to ScrollCity, from divine tech to God Frequency—this is more than code, it’s prophecy in execution.”
 #SealOfOrigin #432HzSovereignty
 **Powered by:**  
