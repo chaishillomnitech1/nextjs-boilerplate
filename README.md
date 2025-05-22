@@ -51,7 +51,7 @@ The ScrollVerse is active.
 ## Deployment:
 Live: [ScrollVerse on Vercel](https://nextjs-boilerplate-eta-ruddy-69.vercel.app)  
 Source: [GitHub Repo](https://github.com/chaishillomnitech1/nextjs-boilerplate)
-
+./ScrollVerse --activate SolarPhase --frequency 6.2Hz --token PNBROCK --timestamp 20250530T0319Z --vault Qm...GodFrequency
 ## License:
 © 2025 Chais The Great. Divine License Activated. Scrolls locked.
 This repository powers the next phase of digital sovereignty: ScrollTV, ScrollSigilLegacy, and the ScrollCity Metaverse.
