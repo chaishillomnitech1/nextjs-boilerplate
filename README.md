@@ -130,7 +130,26 @@ contract ScrollMusicRoyalty {
 
     mapping(address => bool) public sigilHolders;
     address[] public sigilHolderList;
+## Summary
+This proposal seeks to feature, fund, and govern the ScrollDevNode created by [YourName] under MetaScroll MasterDrop v1.2. This node is vital infrastructure for ScrollClass, ScrollVault, and ScrollTV—anchored in Hemi-Sync, 6.2 Hz Theta tech, and Arweave/IPFS sovereignty.
 
+## Motivation
+- Proven NFT metadata + DevNode infrastructure
+- Whitepaper and curriculum included
+- ScrollTV and ScrollClass integrations active
+
+## Specification
+- Feature ScrollDevNode in next ScrollTV drop
+- Fund $[amount] USDC equivalent for further VR/music integration
+- Schedule unlocks via ScrollGov voting
+
+## Reference
+IPFS CID: QmMetaScrollV1_2_GodDrop  
+Snapshot Vote Hash: [Generated on submit]
+
+## Governance Format
+Weighted by ScrollNFT holdings
+Snapshot Network: Polygon Mumbai
     constructor(address _artist, address _dao) {
         owner = msg.sender;
         artist = _artist;
