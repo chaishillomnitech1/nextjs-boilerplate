@@ -1,0 +1,122 @@
+name: Reward and Mint
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+jobs:
+  reward:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.merged == true
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Calculate reward
+        id: calculate
+        run: |
+          # Calculate reward based on PR complexity
+          PR_NUMBER="${{ github.event.pull_request.number }}"
+          PR_ADDITIONS="${{ github.event.pull_request.additions }}"
+          PR_DELETIONS="${{ github.event.pull_request.deletions }}"
+          PR_CHANGED_FILES="${{ github.event.pull_request.changed_files }}"
+          
+          # Simple reward calculation (can be enhanced)
+          TOTAL_CHANGES=$((PR_ADDITIONS + PR_DELETIONS))
+          
+          if [ $TOTAL_CHANGES -lt 50 ]; then
+            REWARD_POINTS=10
+          elif [ $TOTAL_CHANGES -lt 200 ]; then
+            REWARD_POINTS=25
+          elif [ $TOTAL_CHANGES -lt 500 ]; then
+            REWARD_POINTS=50
+          else
+            REWARD_POINTS=100
+          fi
+          
+          echo "reward_points=$REWARD_POINTS" >> $GITHUB_OUTPUT
+          echo "Calculated reward: $REWARD_POINTS points"
+
+      - name: Process reward (Test Mode)
+        id: process-reward
+        env:
+          REWARDS_PRIVATE_KEY: ${{ secrets.REWARDS_PRIVATE_KEY }}
+          ALCHEMY_MUMBAI_URL: ${{ secrets.ALCHEMY_MUMBAI_URL }}
+          REWARDS_API_KEY: ${{ secrets.REWARDS_API_KEY }}
+          REWARDS_CONTRACT_ADDRESS: ${{ secrets.REWARDS_CONTRACT_ADDRESS }}
+          PILOT_TEST_WALLET: ${{ secrets.PILOT_TEST_WALLET }}
+        run: |
+          echo "🎁 Reward Processing (Test Mode)"
+          echo "Contributor: ${{ github.event.pull_request.user.login }}"
+          echo "Reward Points: ${{ steps.calculate.outputs.reward_points }}"
+          echo "Test Wallet: $PILOT_TEST_WALLET"
+          
+          # In production, this would call the rewards contract
+          # For now, we're in test mode and just log the action
+          
+          if [ -z "$REWARDS_PRIVATE_KEY" ]; then
+            echo "⚠️ REWARDS_PRIVATE_KEY not set - running in simulation mode"
+            TRANSACTION_HASH="0xsimulated_test_transaction_hash"
+          else
+            echo "✅ Rewards system configured"
+            # Here you would integrate with the actual smart contract
+            # Example: node scripts/mint-reward.js
+            TRANSACTION_HASH="0xtest_pending_implementation"
+          fi
+          
+          echo "transaction_hash=$TRANSACTION_HASH" >> $GITHUB_OUTPUT
+
+      - name: Comment reward notification
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const rewardPoints = '${{ steps.calculate.outputs.reward_points }}';
+            const txHash = '${{ steps.process-reward.outputs.transaction_hash }}';
+            const contributor = '${{ github.event.pull_request.user.login }}';
+            
+            const comment = `## 🎉 Contribution Reward
+            
+            Congratulations @${contributor}! Your contribution has been merged.
+            
+            **Reward Details:**
+            - Points Earned: ${rewardPoints}
+            - Status: Processing (Test Mode)
+            - Transaction: \`${txHash}\`
+            
+            **What's Next:**
+            Your reward is being processed on the Mumbai testnet. This is part of our pilot rewards program.
+            
+            Thank you for contributing to the project! 🚀
+            
+            ---
+            *This is a test environment. No real tokens are minted.*`;
+            
+            github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: comment
+            });
+
+      - name: Log reward summary
+        run: |
+          echo "=== Reward Summary ==="
+          echo "PR: #${{ github.event.pull_request.number }}"
+          echo "Contributor: ${{ github.event.pull_request.user.login }}"
+          echo "Points: ${{ steps.calculate.outputs.reward_points }}"
+          echo "Transaction: ${{ steps.process-reward.outputs.transaction_hash }}"
+          echo "====================="

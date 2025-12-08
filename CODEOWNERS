@@ -1,0 +1,12 @@
+# CODEOWNERS
+# This file defines the default code reviewers for this repository
+# See: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owner for everything in the repository
+* @chaishillomnitech1
+
+# Specific ownership rules can be added below
+# Examples:
+# /docs/ @chaishillomnitech1
+# *.js @chaishillomnitech1
+# /.github/ @chaishillomnitech1

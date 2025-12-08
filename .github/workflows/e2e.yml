@@ -1,0 +1,81 @@
+name: E2E Tests
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    strategy:
+      matrix:
+        node-version: [20]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build application
+        run: npm run build
+
+      - name: Start application
+        run: |
+          npm run start &
+          sleep 10
+        env:
+          NODE_ENV: production
+          PORT: 3000
+
+      - name: Wait for application to be ready
+        run: |
+          timeout 60 bash -c 'until curl -f http://localhost:3000; do sleep 2; done'
+
+      - name: Run E2E smoke test
+        run: |
+          response=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:3000)
+          if [ "$response" = "200" ]; then
+            echo "✅ Application is responding correctly"
+          else
+            echo "❌ Application returned status code: $response"
+            exit 1
+          fi
+
+      - name: Test application health
+        run: |
+          curl -f http://localhost:3000 || exit 1
+
+      - name: Post E2E results
+        if: always() && github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const status = '${{ job.status }}';
+            const icon = status === 'success' ? '✅' : '❌';
+            const comment = `## ${icon} E2E Test Results
+            
+            **Status:** ${status}
+            **Node Version:** ${{ matrix.node-version }}
+            
+            ${status === 'success' ? 'All E2E tests passed successfully!' : 'E2E tests failed. Please check the workflow logs.'}`;
+            
+            github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: comment
+            });
