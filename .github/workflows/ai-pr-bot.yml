@@ -47,7 +47,7 @@ jobs:
           PR_BODY="${{ github.event.pull_request.body }}"
           DIFF_CONTENT=$(head -n 100 pr_diff.txt)  # Limit to first 100 lines
           
-          # Prepare the prompt with conservative instructions
+          # Prepare the prompt with conservative instructions (properly escaped)
           PROMPT="You are a code review assistant. Analyze this pull request and provide a brief, constructive review (max 300 words).
 
           PR Title: $PR_TITLE
@@ -64,16 +64,22 @@ jobs:
           
           Keep your response concise and actionable."
           
+          # Save prompt to file to avoid JSON injection
+          echo "$PROMPT" > prompt.txt
+          
+          # Create JSON payload using jq for proper escaping
+          PAYLOAD=$(jq -n \
+            --arg model "gpt-3.5-turbo" \
+            --arg content "$(cat prompt.txt)" \
+            --argjson temp 0.3 \
+            --argjson tokens 500 \
+            '{model: $model, messages: [{role: "user", content: $content}], temperature: $temp, max_tokens: $tokens}')
+          
           # Make API call with conservative settings
           RESPONSE=$(curl -s https://api.openai.com/v1/chat/completions \
             -H "Content-Type: application/json" \
             -H "Authorization: Bearer $OPENAI_API_KEY" \
-            -d '{
-              "model": "gpt-3.5-turbo",
-              "messages": [{"role": "user", "content": "'"$PROMPT"'"}],
-              "temperature": 0.3,
-              "max_tokens": 500
-            }' 2>/dev/null || echo '{"choices":[{"message":{"content":"AI analysis unavailable. Please ensure OPENAI_API_KEY is configured."}}]}')
+            -d "$PAYLOAD" 2>/dev/null || echo '{"choices":[{"message":{"content":"AI analysis unavailable. Please ensure OPENAI_API_KEY is configured."}}]}')
           
           # Extract the AI response
           AI_REVIEW=$(echo "$RESPONSE" | jq -r '.choices[0].message.content' 2>/dev/null || echo "Unable to parse AI response")
@@ -105,4 +111,4 @@ jobs:
 
       - name: Cleanup
         if: always()
-        run: rm -f pr_diff.txt
+        run: rm -f pr_diff.txt prompt.txt

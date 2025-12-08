@@ -63,7 +63,7 @@ jobs:
           echo "🎁 Reward Processing (Test Mode)"
           echo "Contributor: ${{ github.event.pull_request.user.login }}"
           echo "Reward Points: ${{ steps.calculate.outputs.reward_points }}"
-          echo "Test Wallet: $PILOT_TEST_WALLET"
+          # Note: Sensitive data like wallet addresses are not logged
           
           # In production, this would call the rewards contract
           # For now, we're in test mode and just log the action

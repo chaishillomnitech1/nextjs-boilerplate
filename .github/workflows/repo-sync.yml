@@ -70,34 +70,46 @@ jobs:
 
       - name: Create sync PR
         if: steps.check-updates.outputs.has_updates == 'true'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_PAT }}
-        run: |
-          # Create a new branch for sync
-          SYNC_BRANCH="automated-sync-$(date +%Y%m%d-%H%M%S)"
-          git checkout -b "$SYNC_BRANCH"
-          
-          # Attempt to merge upstream changes
-          git merge upstream/main --no-edit || {
-            echo "Merge conflicts detected. Creating PR for manual resolution."
-            git merge --abort
-            git merge --no-commit --no-ff upstream/main || true
-          }
-          
-          # Push the sync branch
-          git push origin "$SYNC_BRANCH"
-          
-          # Create PR using GitHub CLI
-          gh pr create \
-            --title "chore: sync with upstream repository" \
-            --body "This PR syncs changes from the upstream repository.
-          
-          **Changes:** Automated sync from upstream
-          **Action Required:** Review and resolve any conflicts if present
-          
-          This is an automated PR created by the repo-sync workflow." \
-            --base main \
-            --head "$SYNC_BRANCH"
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_PAT }}
+          script: |
+            const { execSync } = require('child_process');
+            
+            // Create a new branch for sync
+            const syncBranch = `automated-sync-${Date.now()}`;
+            execSync(`git checkout -b ${syncBranch}`);
+            
+            // Attempt to merge upstream changes
+            try {
+              execSync('git merge upstream/main --no-edit');
+            } catch (error) {
+              console.log('Merge conflicts detected. Creating PR for manual resolution.');
+              execSync('git merge --abort', { stdio: 'ignore' });
+              try {
+                execSync('git merge --no-commit --no-ff upstream/main');
+              } catch (e) {
+                // Continue even if merge fails
+              }
+            }
+            
+            // Push the sync branch
+            execSync(`git push origin ${syncBranch}`);
+            
+            // Create PR using GitHub API
+            await github.rest.pulls.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: 'chore: sync with upstream repository',
+              body: `This PR syncs changes from the upstream repository.
+            
+            **Changes:** Automated sync from upstream
+            **Action Required:** Review and resolve any conflicts if present
+            
+            This is an automated PR created by the repo-sync workflow.`,
+              base: 'main',
+              head: syncBranch
+            });
 
       - name: Report sync status
         if: always()

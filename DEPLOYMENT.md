@@ -24,7 +24,7 @@ The following environment variables must be configured in your Vercel project se
 
 ### Required for Rewards System (Test Environment)
 - `REWARDS_PRIVATE_KEY` - Private key for test wallet
-- `ALCHEMY_MUMBAI_URL` - Alchemy API URL for Mumbai testnet
+- `ALCHEMY_MUMBAI_URL` - Alchemy API URL for Polygon testnet (e.g., Amoy or Mumbai)
 - `REWARDS_API_KEY` - API key for rewards system
 - `REWARDS_CONTRACT_ADDRESS` - Smart contract address for rewards
 - `PILOT_TEST_WALLET` - Test wallet address for pilot program
