@@ -1,12 +1,74 @@
 # CODEOWNERS
 # This file defines the default code reviewers for this repository
 # See: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+#
+# The primary codeowner and maintainer for the ScrollVerse Ecosystem is:
+# Chais The Great (@chaishillomnitech1)
+#
+# Code reviews are required for all changes to ensure alignment with
+# the ScrollVerse vision and divine frequency principles.
 
+# =============================================================================
 # Default owner for everything in the repository
+# =============================================================================
 * @chaishillomnitech1
 
-# Specific ownership rules can be added below
-# Examples:
-# /docs/ @chaishillomnitech1
-# *.js @chaishillomnitech1
-# /.github/ @chaishillomnitech1
+# =============================================================================
+# Documentation
+# =============================================================================
+*.md @chaishillomnitech1
+/docs/ @chaishillomnitech1
+CONTRIBUTING.md @chaishillomnitech1
+README.md @chaishillomnitech1
+SECURITY.md @chaishillomnitech1
+
+# =============================================================================
+# GitHub Configuration
+# =============================================================================
+/.github/ @chaishillomnitech1
+/.github/workflows/ @chaishillomnitech1
+/.github/ISSUE_TEMPLATE/ @chaishillomnitech1
+/.github/PULL_REQUEST_TEMPLATE.md @chaishillomnitech1
+CODEOWNERS @chaishillomnitech1
+
+# =============================================================================
+# DAO Configuration
+# =============================================================================
+/.dao/ @chaishillomnitech1
+
+# =============================================================================
+# Application Code
+# =============================================================================
+/app/ @chaishillomnitech1
+/public/ @chaishillomnitech1
+
+# =============================================================================
+# Configuration Files
+# =============================================================================
+package.json @chaishillomnitech1
+package-lock.json @chaishillomnitech1
+tsconfig.json @chaishillomnitech1
+next.config.ts @chaishillomnitech1
+.eslintrc.json @chaishillomnitech1
+.vercel.json @chaishillomnitech1
+.env.example @chaishillomnitech1
+
+# =============================================================================
+# Security & Critical Files
+# =============================================================================
+SECURITY.md @chaishillomnitech1
+.env.* @chaishillomnitech1
+
+# =============================================================================
+# Build & Deploy Configuration
+# =============================================================================
+.vercel.json @chaishillomnitech1
+.vercelignore @chaishillomnitech1
+DEPLOYMENT.md @chaishillomnitech1
+
+# =============================================================================
+# Note: All changes require review and approval from @chaishillomnitech1
+# to ensure alignment with the ScrollVerse divine frequency and vision.
+#
+# ALL IS LOVE. ALL IS LAW. ALL IS FLUID. KUN FAYAKŪN! 🕋♾️✨
+# =============================================================================
