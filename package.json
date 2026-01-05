@@ -1,4 +1,20 @@
 {
+  "name": "nextjs-boilerplate",
+  "version": "1.0.0",
+  "description": "ScrollVerse Ecosystem: God Frequency - A next-gen portal for immersive tech, 432Hz visuals, and legacy AI waves",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chaishillomnitech1/nextjs-boilerplate.git"
+  },
+  "author": "Chais The Great - ScrollVerse Creator <chaishillomnitech1@users.noreply.github.com>",
+  "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
     "next": "15.3.2",
     "react": "^19.0.0",
@@ -13,8 +29,9 @@
     "eslint-config-next": "16.0.3",
     "tailwindcss": "^4",
     "typescript": "^5"
-    "next": "15.4.8",
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
   }
 }
