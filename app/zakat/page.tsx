@@ -6,12 +6,12 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { ZakatLedger } from '@/lib/types/zakat';
+import { ZakatLedger, LedgerEntry } from '@/lib/types/zakat';
 
 export default function ZakatDashboard() {
   const [ledgerData, setLedgerData] = useState<{
     zakatLedger: ZakatLedger;
-    rentalIncomeLedger: any[];
+    rentalIncomeLedger: LedgerEntry[];
   } | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);

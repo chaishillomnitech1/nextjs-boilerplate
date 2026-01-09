@@ -216,6 +216,12 @@ APIDECK_APP_ID=your-apideck-app-id-here
 3. Copy your API Key and App ID
 4. Configure integrations (Accounting, CRM, etc.)
 
+**Example placeholders:**
+```bash
+APIDECK_API_KEY=sk_live_1234567890abcdef
+APIDECK_APP_ID=app_test_9876543210zyxwvu
+```
+
 ## Ledger Structure
 
 ### Rental Income Ledger

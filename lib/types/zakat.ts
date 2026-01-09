@@ -28,7 +28,7 @@ export interface RentalIncome {
   period: string; // e.g., "2026-01", "2026-Q1"
   receivedDate: Date;
   source: string; // Source of the rental income data
-  apideekSyncId?: string; // Reference to Apideck sync
+  apideckSyncId?: string; // Reference to Apideck sync
 }
 
 /**
@@ -87,7 +87,7 @@ export interface ZakatLedger {
 /**
  * Apideck sync status
  */
-export interface ApideekSyncStatus {
+export interface ApideckSyncStatus {
   lastSyncDate: Date;
   syncId: string;
   status: 'success' | 'failed' | 'pending';

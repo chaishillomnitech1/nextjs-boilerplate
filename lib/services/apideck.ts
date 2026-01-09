@@ -6,14 +6,14 @@
 import { Apideck } from '@apideck/node';
 import {
   RentalIncome,
-  ApideekSyncStatus,
+  ApideckSyncStatus,
   RWAProperty,
 } from '../types/zakat';
 
 /**
  * Initialize Apideck client
  */
-export function createApideekClient(): Apideck {
+export function createApideckClient(): Apideck {
   const apiKey = process.env.APIDECK_API_KEY;
   const appId = process.env.APIDECK_APP_ID;
 
@@ -36,14 +36,14 @@ export async function syncRentalIncome(
   properties: RWAProperty[]
 ): Promise<{
   rentalIncomes: RentalIncome[];
-  syncStatus: ApideekSyncStatus;
+  syncStatus: ApideckSyncStatus;
 }> {
   const syncId = `sync-${Date.now()}`;
   const errors: string[] = [];
   const rentalIncomes: RentalIncome[] = [];
 
   try {
-    const apideck = createApideekClient();
+    const apideck = createApideckClient();
 
     // In a real implementation, this would call Apideck's Accounting API
     // to fetch invoice/payment data related to rental properties
@@ -61,12 +61,12 @@ export async function syncRentalIncome(
         const mockIncome: RentalIncome = {
           id: `income-${property.id}-${Date.now()}`,
           propertyId: property.id,
-          amount: 0, // Would come from Apideck API
+          amount: 5000, // Mock amount for demonstration
           currency: property.currency,
           period: new Date().toISOString().slice(0, 7), // YYYY-MM format
           receivedDate: new Date(),
           source: 'apideck-unified-api',
-          apideekSyncId: syncId,
+          apideckSyncId: syncId,
         };
 
         // In production, you would process actual data from Apideck
@@ -82,7 +82,7 @@ export async function syncRentalIncome(
       }
     }
 
-    const syncStatus: ApideekSyncStatus = {
+    const syncStatus: ApideckSyncStatus = {
       lastSyncDate: new Date(),
       syncId,
       status: errors.length === 0 ? 'success' : 'failed',
@@ -98,7 +98,7 @@ export async function syncRentalIncome(
     const errorMsg = error instanceof Error ? error.message : 'Unknown error during sync';
     errors.push(errorMsg);
 
-    const syncStatus: ApideekSyncStatus = {
+    const syncStatus: ApideckSyncStatus = {
       lastSyncDate: new Date(),
       syncId,
       status: 'failed',
@@ -119,7 +119,7 @@ export async function syncRentalIncome(
  */
 export async function fetchPropertyData(propertyIds: string[]): Promise<RWAProperty[]> {
   try {
-    const apideck = createApideekClient();
+    const apideck = createApideckClient();
 
     // In production, this would call Apideck's CRM or custom API
     // to fetch property details
@@ -146,9 +146,9 @@ export async function fetchPropertyData(propertyIds: string[]): Promise<RWAPrope
 /**
  * Validate Apideck connection
  */
-export async function validateApideekConnection(): Promise<boolean> {
+export async function validateApideckConnection(): Promise<boolean> {
   try {
-    const apideck = createApideekClient();
+    const apideck = createApideckClient();
     // In production, make a simple API call to verify connectivity
     // For now, just check if credentials exist
     return true;
