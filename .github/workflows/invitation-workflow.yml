@@ -1,0 +1,21 @@
+name: Invitation Workflow
+
+on:
+  workflow_dispatch: # Allows manual triggering
+
+jobs:
+  sync-and-send:
+    runs-on: ubuntu-latest
+    steps:
+    # Step 1: Sync Salesforce and HubSpot
+    - name: Sync Salesforce and HubSpot
+      run: |
+        echo "Syncing Salesforce and HubSpot..."
+        # Placeholder for actual integration logic
+
+    # Step 2: Filter and Send Sovereign Access Links
+    - name: Process Spiritual Net Worth and Send Links
+      run: |
+        echo "Filtering architects with SNW above the threshold..."
+        echo "Sending 'Sovereign Access' links to eligible architects..."
+        # Placeholder for processing SNW and sending links
