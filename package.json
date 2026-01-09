@@ -16,7 +16,7 @@
   "author": "Chais The Great - ScrollVerse Creator <chaishillomnitech1@users.noreply.github.com>",
   "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
-    "next": "15.3.2",
+    "next": "15.3.8",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
