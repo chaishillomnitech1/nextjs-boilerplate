@@ -16,6 +16,7 @@
   "author": "Chais The Great - ScrollVerse Creator <chaishillomnitech1@users.noreply.github.com>",
   "license": "SEE LICENSE IN LICENSE",
   "dependencies": {
+    "@apideck/node": "^3.8.0",
     "next": "15.3.8",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
@@ -28,6 +29,7 @@
     "eslint": "9.39.1",
     "eslint-config-next": "16.0.3",
     "tailwindcss": "^4",
+    "tsx": "^4.21.0",
     "typescript": "^5"
   },
   "engines": {
