@@ -173,6 +173,7 @@ We welcome contributions from the community! Please read our [Contributing Guide
 - **[Development Setup](./docs/onboarding/DEVELOPMENT_SETUP.md)** - Detailed development environment setup
 - **[Deployment Guide](./DEPLOYMENT.md)** - Complete deployment instructions
 - **[Security Policy](./SECURITY.md)** - Security guidelines and reporting
+- **[Phase IX Institutional Pitch](./docs/phase-ix/institutional-pitch/PITCH_DECK.md)** - $100B valuation framework and space technologies integration
 
 ## 🔒 Security
 
